@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const amount = Array.from(Array(256).keys());
+---
+
+<BaseLayout pageTitle="Home">
+  {
+    amount.map((_) => (
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam
+        aut voluptatum eaque libero, esse quo. Tempora, aperiam totam soluta
+        consectetur explicabo, neque aut, necessitatibus dolores iste eum quam
+        temporibus?
+      </span>
+    ))
+  }
+</BaseLayout>

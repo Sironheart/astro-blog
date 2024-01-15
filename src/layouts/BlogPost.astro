@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+interface Props {
+  title: string
+  description: string
+  date: Date
+  hero?: {src: string; alt: string}
+}
+
+const page = Astro.props;
+---
+
+<BaseLayout pageTitle={page.title} centerTitle={false}>
+  <content>
+    <div class="px-4 text-sm">
+      Published at: {page.date.toString().slice(0, 10)}
+    </div>
+    {
+      !!page.hero ? (
+        <img src={page.hero.src} alt={page.hero.alt} class="mx-auto w-1/2" />
+      ) : (
+        ""
+      )
+    }
+    <a href="/blog" class="text-sm my-4 underline">Back to posts</a>
+    <hr class="border-gray-700 my-4" />
+  </content>
+  <article class="mx-32">
+    <slot />
+  </article>
+</BaseLayout>

@@ -1,0 +1,11 @@
+root = true
+
+[*.{astro,ts,mjs,css}]
+indent_size = 2
+
+# [*.mjs]
+# indent_size = 2
+#
+# [*.css]
+# indent_size = 2
+
